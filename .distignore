@@ -10,6 +10,7 @@ behat.yml
 bitbucket-pipelines.yml
 phpcs.xml.dist
 phpunit.xml.dist
+.phpunit.result.cache
 bin/
 features/
 utils/
