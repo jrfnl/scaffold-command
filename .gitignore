@@ -7,5 +7,6 @@ vendor/
 composer.lock
 *.log
 phpunit.xml
+.phpunit.result.cache
 phpcs.xml
 .phpcs.xml
