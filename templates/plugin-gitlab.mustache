@@ -20,16 +20,15 @@ before_script:
   - bash bin/install-wp-tests.sh wordpress_tests root mysql mysql latest true
 
   # Install PHPCS and WPCS
-  - composer global require "squizlabs/php_codesniffer=*"
   - composer global require "wp-coding-standards/wpcs"
-  - phpcs --config-set installed_paths $HOME/.composer/vendor/wp-coding-standards/wpcs
+  - composer global require "phpcompatibility/phpcompatibility-wp"
+  - composer global require "dealerdirect/phpcodesniffer-composer-installer"
 
 PHPunit:PHP5.3:MySQL:
   image: tetraweb/php:5.3
   services:
     - mysql:5.6
   script:
-  - phpcs
   - phpunit
 
 PHPunit:PHP5.6:MySQL:
@@ -37,15 +36,13 @@ PHPunit:PHP5.6:MySQL:
   services:
     - mysql:5.6
   script:
-  - phpcs
   - phpunit
-  
+
 PHPunit:PHP7.0:MySQL:
   image: tetraweb/php:7.0
   services:
     - mysql:5.6
   script:
-  - phpcs
   - phpunit
 
 PHPunit:PHP7.1:MySQL:
@@ -53,7 +50,6 @@ PHPunit:PHP7.1:MySQL:
   services:
     - mysql:5.6
   script:
-  - phpcs
   - phpunit
 
 PHPunit:PHP7.2:MySQL:
