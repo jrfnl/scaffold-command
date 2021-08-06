@@ -42,7 +42,7 @@ jobs:
 
       - name: Run Linter
         if: steps.check_linter_file.outputs.files_exists == 'true'
-        run: vendor/bin/parallel-lint -j 10 . --exclude vendor --checkstyle | cs2pr
+        run: vendor/bin/parallel-lint -j 10 . --exclude vendor --exclude .git --checkstyle | cs2pr
 
   phpcs: #----------------------------------------------------------------------
     name: PHPCS
