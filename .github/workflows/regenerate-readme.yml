@@ -3,8 +3,8 @@ name: Regenerate README file
 on:
   workflow_dispatch:
   push:
-    branches:
-      - master
+#    branches:
+#      - master
     paths-ignore:
       - 'features/**'
       - 'README.md'
